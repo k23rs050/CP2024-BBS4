@@ -482,12 +482,14 @@ $(function() {
         // 投稿内容をフォームから取得
         const authorVal = $('#authorInput').val();
         const contentVal = $('#contentInput').val();
+        $("body").css("background-color", "lightgrey");
         createPost(authorVal, contentVal);
     });
 
     $('#loginButton').on('click', function() {
         const email = $('#loginEmail').val();
         const password = $('#loginPassword').val();
+
         login(email, password);
     });
 
