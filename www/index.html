@@ -57,7 +57,8 @@ function updateCharacterCount(inputId, counterId, maxLength) {
     
     input.on('input', () => {
         const length = input.val().length;
-        counter.text(`${length}/${maxLength}`);
+        counter.text(`${maxLength-length}/${maxLength}`);
+        
     
         if (length > maxLength) {
             counter.addClass('error');
@@ -502,6 +503,7 @@ $(function() {
 
     $('#logoutButton').on('click', logout);
      $("body").css("background-color", "white");
+
 
     // 投稿一覧表示順序選択
     $('#sortOrder').on('change', loadPosts);
