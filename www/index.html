@@ -489,17 +489,19 @@ $(function() {
     $('#loginButton').on('click', function() {
         const email = $('#loginEmail').val();
         const password = $('#loginPassword').val();
-
+         $("body").css("background-color", "red");
         login(email, password);
     });
 
     $('#registerButton').on('click', function() {
         const email = $('#loginEmail').val();
         const password = $('#loginPassword').val();
+        $("body").css("background-color", "white");
         register(email, password);
     });
 
     $('#logoutButton').on('click', logout);
+     $("body").css("background-color", "white");
 
     // 投稿一覧表示順序選択
     $('#sortOrder').on('change', loadPosts);
@@ -539,7 +541,7 @@ window.addEventListener('unload', function() {
             </div>
             <div class="button-group">
                 <button id="loginButton" class="btn-primary">ログイン</button>
-                <button id="registerButton" class="btn-secondary">新規登録</button>
+                <button id="registerButton" class="btn-secondary">新規登録&背景色リセット</button>
             </div>
         </div>
 
@@ -552,7 +554,7 @@ window.addEventListener('unload', function() {
         <!-- 投稿フォーム（ログイン時表示） -->
         <div class="post-form logged-in">
             <div class="form-group">
-                <label for="contentInput">投稿内容</label>
+                <label for="contentInput">投稿内容※個人情報を安易に出さないこと</label>
                 <textarea id="contentInput" class="form-control" 
                           placeholder="投稿内容を入力してください"></textarea>
                 <small class="character-count" id="contentCount">0/1000</small>
@@ -560,6 +562,8 @@ window.addEventListener('unload', function() {
             <div class="button-group">
                 <button id="postButton" class="btn-primary">投稿する</button>
             </div>
+            </div>
+        
         </div>
 
         <!-- 投稿一覧 -->
